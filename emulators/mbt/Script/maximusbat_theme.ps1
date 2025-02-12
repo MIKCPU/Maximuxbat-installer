@@ -1,9 +1,9 @@
 $logo = @"
-M   M  III  K   K  CCCC  PPPP  U   U
+M   M  III  K   K CCCCC  PPPPP U   U
 MM MM   I   K  K  C      P   P U   U
-M M M   I   K K   C      PPPP  U   U
+M M M   I   K K   C      PPPPP U   U
 M   M   I   KK    C      P     U   U
-M   M  III  K  K  CCCC  P      UUUU
+M   M  III  K  K  CCCCC  P     UUUUU
 "@
 
 Write-Host $logo -ForegroundColor Red
@@ -31,24 +31,20 @@ $gitPortable = "$retroBatPath\emulators\mbt\PortableGit\bin\git.exe"
 $repoURL = "https://github.com/MIKCPU/Maximusbat-theme.git"
 $destinationFolder = "$retroBatPath\RetroBat\emulationstation\.emulationstation\themes\Maximusbat"
 
-# Verifica se PortableGit esiste
 if (-not (Test-Path $gitPortable)) {
     Write-Host "PortableGit non trovato in $gitPortable. Verifica il percorso." -ForegroundColor Red
     exit
 }
 
-# Configura Git
 & $gitPortable config --global http.postBuffer 524288000  
 & $gitPortable config --global http.sslBackend openssl  
 
-# Crea la cartella Maximusbat se non esiste
 if (-Not (Test-Path $destinationFolder)) {
     Write-Host "Creazione della cartella Maximusbat..."
     New-Item -ItemType Directory -Path $destinationFolder
     Write-Host "Cartella Maximusbat creata!" -ForegroundColor Green
 }
 
-# Se la cartella del tema esiste già, esegui un pull, altrimenti clona il repository
 if (-Not (Test-Path "$destinationFolder\.git")) {
     Write-Host "Clonazione iniziale del repository..."
 
@@ -129,12 +125,11 @@ Write-Host "Thank you for downloading and installing my theme!    " -ForegroundC
 Write-Host "Grazie per aver scaricato ed installato il mio tema!  " -ForegroundColor Green
 Write-Host "______________________________________________________" -ForegroundColor Green
                                                       
-$logo = @"
-M   M  III  K   K  CCCC  PPPP  U   U
+M   M  III  K   K CCCCC  PPPPP U   U
 MM MM   I   K  K  C      P   P U   U
-M M M   I   K K   C      PPPP  U   U
+M M M   I   K K   C      PPPPP U   U
 M   M   I   KK    C      P     U   U
-M   M  III  K  K  CCCC  P      UUUU
+M   M  III  K  K  CCCCC  P     UUUUU
 "@
 
 Write-Host $logo -ForegroundColor Red   

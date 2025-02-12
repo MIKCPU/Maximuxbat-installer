@@ -11,10 +11,10 @@ Write-Host $logo -ForegroundColor Red
     Write-Host "Presents..." -ForegroundColor Blue
     Write-Host "Presenta..." -ForegroundColor Blu   
 $logo = @"
-  __  __   _   __  _____ __  __ _   _ ___ ___   _ _____    _   _ ___ ___   _ _____ ___ ___ 
- |  \/  | /_\  \ \/ /_ _|  \/  | | | / __| _ ) /_\_   _|__| | | | _ \   \ /_\_   _| __| _ \
- | |\/| |/ _ \  >  < | || |\/| | |_| \__ \ _ \/ _ \| ||___| |_| |  _/ |) / _ \| | | _||   /
- |_|  |_/_/ \_\/_/\_\___|_|  |_|\___/|___/___/_/ \_\_|     \___/|_| |___/_/ \_\_| |___|_|_\
+  __  __   _   __  _____ __  __ _   _ ___ ___   _ _____   ___ _  _ ___ _____ _   _    _    ___ ___ 
+ |  \/  | /_\  \ \/ /_ _|  \/  | | | / __| _ ) /_\_   _|_|_ _| \| / __|_   _/_\ | |  | |  | __| _ \
+ | |\/| |/ _ \  >  < | || |\/| | |_| \__ \ _ \/ _ \| ||___| || .` \__ \ | |/ _ \| |__| |__| _||   /
+ |_|  |_/_/ \_\/_/\_\___|_|  |_|\___/|___/___/_/ \_\_|   |___|_|\_|___/ |_/_/ \_\____|____|___|_|_\                                                                                          
 "@
 
 Write-Host $logo -ForegroundColor Red
@@ -27,9 +27,9 @@ if (-not $retroBatPath) {
     exit
 }
 $gitPortable = "$retroBatPath\emulators\mbt\PortableGit\bin\git.exe"
-$destinationFolder = "$retroBatPath\Maximusbat-Updater-main"
-$repoURL = "https://github.com/MIKCPU/Maximusbat-Updater.git"
-$sourceFolder = "$retroBatPath\Maximusbat-Updater-main"
+$destinationFolder = "$retroBatPath\Maximusbat-installer-main"
+$repoURL = "https://github.com/MIKCPU/Maximuxbat-installer.git"
+$sourceFolder = "$retroBatPath\Maximusbat-installer-main"
 
 & $gitPortable config --global http.postBuffer 524288000  
 & $gitPortable config --global http.sslBackend openssl  
@@ -102,8 +102,8 @@ if (-Not (Test-Path $destinationFolder)) {
     }
 }
 
-$fileToDelete1 = "$retroBatPath\Maximusbat-Updater-main\README.md"
-$fileToDelete2 = "$retroBatPath\Maximusbat-Updater-main\.gitattributes"
+$fileToDelete1 = "$retroBatPath\Maximusbat-installer-main\README.md"
+$fileToDelete2 = "$retroBatPath\Maximusbat-installer-main\.gitattributes"
 
 if (Test-Path $fileToDelete1) {
     Remove-Item -Path $fileToDelete1
@@ -135,37 +135,12 @@ if (Test-Path $gitFolder) {
     Write-Host "La cartella $gitFolder non esiste." -ForegroundColor Yellow
 }
 
-
-$desktopPath = [System.Environment]::GetFolderPath('Desktop')
-
-
-$shortcutPath = "$desktopPath\RetroBat PIxN - RGS.lnk"
-$retrobatExePath = "$retroBatPath\retrobat.exe" 
-$iconPath = "$retroBatPath\_PreRequisites -Install First-\icon.ico" 
-
-
-$shell = New-Object -ComObject WScript.Shell
-$shortcut = $shell.CreateShortcut($shortcutPath)
-
-
-$shortcut.TargetPath = $retrobatExePath
-$shortcut.IconLocation = $iconPath
-
-
-$shortcut.Save()
-
-
-Write-Host "Collegamento RetroBat PIxN - RGS creato con successo sul desktop!" -ForegroundColor Green
-
-Write-Host "Operation Complete!" -ForegroundColor Green
-Write-Host "Operazione completata!" -ForegroundColor Green
-
 pause
 
 cls
 Write-Host "______________________________________________________" -ForegroundColor Green                                                        
-Write-Host "Thank you for downloading and installing my theme!    " -ForegroundColor Green
-Write-Host "Grazie per aver scaricato ed installato il mio tema!  " -ForegroundColor Green
+Write-Host "Thank you for downloading and installing Install tool " -ForegroundColor Green
+Write-Host "Grazie per aver scaricato ed installato Intsall tool  " -ForegroundColor Green
 Write-Host "______________________________________________________" -ForegroundColor Green
                                                       
 $logo = @"
@@ -178,8 +153,8 @@ M   M  III  K  K  CCCCC  P     UUUUU
 
 Write-Host $logo -ForegroundColor Red   
 Write-Host "______________________________________________________" -ForegroundColor Green                                                        
-Write-Host "Download - Updates complete!                          " -ForegroundColor Green
-Write-Host "Download - Aggiornamenti completati!                  " -ForegroundColor Green
+Write-Host "Download - Tool complete!                          " -ForegroundColor Green
+Write-Host "Download - Tool completato!                  " -ForegroundColor Green
 Write-Host "______________________________________________________" -ForegroundColor Green
 Write-Host "Press any key to close!                               " -ForegroundColor Green    
 Write-Host "Premi un tasto per chiudere!                          " -ForegroundColor Green
