@@ -29,7 +29,7 @@ if (-not $retroBatPath) {
 }
 $gitPortable = "$retroBatPath\emulators\mbt\PortableGit\bin\git.exe"
 $repoURL = "https://github.com/MIKCPU/Maximusbat-theme.git"
-$destinationFolder = "$retroBatPath\RetroBat\emulationstation\.emulationstation\themes\Maximusbat"
+$destinationFolder = "$retroBatPath\emulationstation\.emulationstation\themes\Maximusbat"
 
 if (-not (Test-Path $gitPortable)) {
     Write-Host "PortableGit non trovato in $gitPortable. Verifica il percorso." -ForegroundColor Red
