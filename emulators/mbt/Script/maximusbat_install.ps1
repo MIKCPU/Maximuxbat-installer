@@ -135,6 +135,9 @@ if (Test-Path $gitFolder) {
     Write-Host "La cartella $gitFolder non esiste." -ForegroundColor Yellow
 }
 
+Write-Host "Operation Complete!" -ForegroundColor Green
+Write-Host "Operazione completata!" -ForegroundColor Green
+
 pause
 
 cls
