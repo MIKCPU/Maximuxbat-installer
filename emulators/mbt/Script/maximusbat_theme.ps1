@@ -120,10 +120,10 @@ Write-Host "Operazione completata!" -ForegroundColor Green
 pause
 
 cls
-Write-Host "______________________________________________________" -ForegroundColor Green                                                        
-Write-Host "Thank you for downloading and installing my theme!    " -ForegroundColor Green
-Write-Host "Grazie per aver scaricato ed installato il mio tema!  " -ForegroundColor Green
-Write-Host "______________________________________________________" -ForegroundColor Green
+Write-Host " ______________________________________________________ " -ForegroundColor Green                                                        
+Write-Host "|Thank you for downloading and installing my theme!    |" -ForegroundColor Green
+Write-Host "|Grazie per aver scaricato ed installato il mio tema!  |" -ForegroundColor Green
+Write-Host "|______________________________________________________|" -ForegroundColor Green
                                                       
 M   M  III  K   K CCCCC  PPPPP U   U
 MM MM   I   K  K  C      P   P U   U
@@ -133,12 +133,18 @@ M   M  III  K  K  CCCCC  P     UUUUU
 "@
 
 Write-Host $logo -ForegroundColor Red   
-Write-Host "______________________________________________________" -ForegroundColor Green                                                        
-Write-Host "Download - Updates complete!                          " -ForegroundColor Green
-Write-Host "Download - Aggiornamenti completati!                  " -ForegroundColor Green
-Write-Host "______________________________________________________" -ForegroundColor Green
-Write-Host "Press any key to close!                               " -ForegroundColor Green    
-Write-Host "Premi un tasto per chiudere!                          " -ForegroundColor Green
-Write-Host "______________________________________________________" -ForegroundColor Green
+Write-Host " _____________________________________________________ " -ForegroundColor Green
+Write-Host "|Download - Themme complete!                          |" -ForegroundColor Green
+Write-Host "|Download - Tema completato!                          |" -ForegroundColor Green
+Write-Host "|_____________________________________________________|" -ForegroundColor Green
+Write-Host "|Press any key to close!                              |" -ForegroundColor Green
+Write-Host "|Premi un tasto per chiudere!                         |" -ForegroundColor Green
+Write-Host "|_____________________________________________________|" -ForegroundColor Green
 
 $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
+
+
+
+
+
+

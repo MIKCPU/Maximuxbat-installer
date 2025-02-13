@@ -118,14 +118,14 @@ if (Test-Path $fileToDelete2) {
     Write-Host "$fileToDelete2 eliminato!" -ForegroundColor Red
 }
 
-Write-Host "Moving the files from '$sourceFolder' to '$driveLetter\retrobat'..." -ForegroundColor Green
-Write-Host "Spostando i file da '$sourceFolder' a '$driveLetter\retrobat'..." -ForegroundColor Green
+Write-Host "Moving the files from '$sourceFolder' to '$retroBatPath'..." -ForegroundColor Green
+Write-Host "Spostando i file da '$sourceFolder' a '$retroBatPath'..." -ForegroundColor Green
 
-Copy-Item -Path "$sourceFolder\*" -Destination $driveLetter\retrobat -Recurse -Force
+Copy-Item -Path "$sourceFolder\*" -Destination $retroBatPath -Recurse -Force
 
 Remove-Item -Path $sourceFolder -Recurse -Force
 
-$gitFolder = "$driveLetter\retrobat\.git"  
+$gitFolder = "$retroBatPath\.git"  
 if (Test-Path $gitFolder) {
     attrib +h $gitFolder
     Write-Host "The folder $gitFolder has been hidden!" -ForegroundColor Yellow
@@ -138,10 +138,10 @@ if (Test-Path $gitFolder) {
 pause
 
 cls
-Write-Host "______________________________________________________" -ForegroundColor Green                                                        
-Write-Host "Thank you for downloading and installing Install tool " -ForegroundColor Green
-Write-Host "Grazie per aver scaricato ed installato Intsall tool  " -ForegroundColor Green
-Write-Host "______________________________________________________" -ForegroundColor Green
+Write-Host " _____________________________________________________ " -ForegroundColor Green                                                        
+Write-Host "|Thank you for downloading and installing Install tool|" -ForegroundColor Green
+Write-Host "|Grazie per aver scaricato ed installato Intsall tool |" -ForegroundColor Green
+Write-Host "|_____________________________________________________|" -ForegroundColor Green
                                                       
 $logo = @"
 M   M  III  K   K CCCCC  PPPPP U   U
@@ -152,12 +152,12 @@ M   M  III  K  K  CCCCC  P     UUUUU
 "@
 
 Write-Host $logo -ForegroundColor Red   
-Write-Host "______________________________________________________" -ForegroundColor Green                                                        
-Write-Host "Download - Tool complete!                          " -ForegroundColor Green
-Write-Host "Download - Tool completato!                  " -ForegroundColor Green
-Write-Host "______________________________________________________" -ForegroundColor Green
-Write-Host "Press any key to close!                               " -ForegroundColor Green    
-Write-Host "Premi un tasto per chiudere!                          " -ForegroundColor Green
-Write-Host "______________________________________________________" -ForegroundColor Green
+Write-Host " _____________________________________________________ " -ForegroundColor Green                                                        
+Write-Host "|Download - Tool complete!                            |" -ForegroundColor Green
+Write-Host "|Download - Tool completato!                          |" -ForegroundColor Green
+Write-Host "|_____________________________________________________|" -ForegroundColor Green
+Write-Host "|Press any key to close!                              |" -ForegroundColor Green    
+Write-Host "|Premi un tasto per chiudere!                         |" -ForegroundColor Green
+Write-Host "|_____________________________________________________|" -ForegroundColor Green
 
 $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
