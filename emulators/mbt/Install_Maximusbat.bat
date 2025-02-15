@@ -34,37 +34,37 @@ echo.
 echo [92m
 echo               =================================================================================
 echo               * Select the operation to perform:     *  Seleziona l'operazione da eseguire:   *
-echo               * 0. Start Tool-Install installation   *  0. Avvia installazione Tool-Install   *     
-echo               * 1. Start Updater installation        *  1. Avvia installazione Updater        *     
-echo               * 2. Start MaximusBat theme download   *  2. Avvia scaricamento tema MaximusBat *      
-echo               * 3. Exit                              *  3. Uscita                             *                              
+echo               * 1. Start Tool-Install installation   *  1. Avvia installazione Tool-Install   *     
+echo               * 2. Start Updater installation        *  2. Avvia installazione Updater        *     
+echo               * 3. Start MaximusBat theme download   *  3. Avvia scaricamento tema MaximusBat *      
+echo               * E. Exit                              *  E. Uscita                             *                              
 echo               =================================================================================[0m
 echo.
 
 set /p scelta="[93mEnter the number of the desired option:[0m [94m--[0m [93mInserisci il numero dell'opzione desiderata:[0m "
 
-if "%scelta%"=="0" (
+if "%scelta%"=="1" (
     cls
     echo [92mStart Tool-Install  installation... - Avvia installazione Tool-Install...[0m
     powershell -ExecutionPolicy Bypass -File "%~dp0script\maximusbat_install.ps1" "%~dp0"
     goto menu
 )
 
-if "%scelta%"=="1" (
+if "%scelta%"=="2" (
     cls
     echo [92mStart Updater installation... - Avvia installazione Updater...[0m
     powershell -ExecutionPolicy Bypass -File "%~dp0script\maximusbat_update.ps1" "%~dp0"
     goto menu
 )
 
-if "%scelta%"=="2" (
+if "%scelta%"=="3" (
     cls
     echo [92mStart MaximusBat theme download... - Avvia scaricamento tema MaximusBat...[0m
     powershell -ExecutionPolicy Bypass -File "%~dp0script\maximusbat_theme.ps1"  "%~dp0"
     goto menu
 )
 
-if "%scelta%"=="3" goto exit
+if "%scelta%"=="E" goto exit
 
 echo [91mInvalid option. Please try again. - Opzione non valida. Riprova.[0m
 goto menu
