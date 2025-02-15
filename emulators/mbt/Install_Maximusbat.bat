@@ -37,7 +37,7 @@ echo               * Select the operation to perform:     *  Seleziona l'operazi
 echo               * 1. Start Tool-Install installation   *  1. Avvia installazione Tool-Install   *     
 echo               * 2. Start Updater installation        *  2. Avvia installazione Updater        *     
 echo               * 3. Start MaximusBat theme download   *  3. Avvia scaricamento tema MaximusBat *      
-echo               * E. Exit                              *  E. Uscita                             *                              
+echo               * e. Exit                              *  e. Uscita                             *                              
 echo               =================================================================================[0m
 echo.
 
@@ -64,7 +64,7 @@ if "%scelta%"=="3" (
     goto menu
 )
 
-if "%scelta%"=="E" goto exit
+if "%scelta%"=="e" goto exit
 
 echo [91mInvalid option. Please try again. - Opzione non valida. Riprova.[0m
 goto menu
