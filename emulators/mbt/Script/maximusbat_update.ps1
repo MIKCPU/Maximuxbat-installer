@@ -19,13 +19,18 @@ $logo = @"
 
 Write-Host $logo -ForegroundColor Red
 
-$retroBatPath = Get-ChildItem -Path (Get-PSDrive -PSProvider FileSystem).Root -Recurse -Directory -Filter "RetroBat" -ErrorAction SilentlyContinue | Select-Object -First 1 -ExpandProperty FullName
+$scriptDrive = (Get-Item -Path ".\").FullName.Substring(0, 2)
+$retroBatPath = "$scriptDrive\RetroBat"
 
-if (-not $retroBatPath) {
-    Write-Host "Error: The RetroBat folder was not found."
-    Write-Host "Errore: La cartella RetroBat non è stata trovata."
+if (-not (Test-Path $retroBatPath)) {
+    Write-Host "Error: RetroBat folder not found in: $scriptDrive!" -ForegroundColor Red
+    Write-Host "Errore: Cartella RetroBat non trovata su: $scriptDrive!" -ForegroundColor Red
     exit
 }
+
+    Write-Host "RetroBat found at: $retroBatPath" -ForegroundColor Green
+    Write-Host "RetroBat trovato su: $retroBatPath" -ForegroundColor Green
+
 $gitPortable = "$retroBatPath\emulators\mbt\PortableGit\bin\git.exe"
 $destinationFolder = "$retroBatPath\Maximusbat-Updater-main"
 $repoURL = "https://github.com/MIKCPU/Maximusbat-Updater.git"
